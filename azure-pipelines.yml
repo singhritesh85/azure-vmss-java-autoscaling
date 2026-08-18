@@ -38,7 +38,7 @@ stages:
       inputs:
         azureSubscription: 'Azure DevOps Service Connection'
         mavenPomFile: 'pom.xml'
-        goals: 'clean deploy sonar:sonar'
+        goals: 'clean deploy org.sonarsource.scanner.maven:sonar-maven-plugin:5.7.0.6970:sonar'
         publishJUnitResults: false
         javaHomeOption: 'JDKVersion'
         mavenVersionOption: 'Default'
