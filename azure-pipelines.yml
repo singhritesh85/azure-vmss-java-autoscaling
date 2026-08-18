@@ -63,3 +63,9 @@ stages:
                packer plugins install github.com/hashicorp/ansible
                chmod +x create-infra.sh
                sh create-infra.sh
+           env:
+             TENANT_ID: $(TENANT_ID)
+             SUBSCRIPTION_ID: $(SUBSCRIPTION_ID)
+             CLIENT_ID: $(CLIENT_ID)
+             CLIENT_SECRET: $(CLIENT_SECRET)
+             IMAGE_VERSION: "1.0.$(Build.BuildId)"
