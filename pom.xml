@@ -24,6 +24,30 @@
 			<version>4.10</version>
 		</dependency>
 	</dependencies>
+	<repositories>
+	<repository>
+  <id>Maven-Feed</id>
+  <url>https://pkgs.dev.azure.com/singhriteshkumar2510554/_packaging/Maven-Feed/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+</repositories>
+	<distributionManagement>
+		<repository>
+  <id>Maven-Feed</id>
+  <url>https://pkgs.dev.azure.com/singhriteshkumar2510554/_packaging/Maven-Feed/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+	</distributionManagement>
 	<build>
 		<finalName>LoginWebApp</finalName>
 	</build>
