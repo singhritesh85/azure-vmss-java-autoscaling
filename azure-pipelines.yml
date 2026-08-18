@@ -37,7 +37,7 @@ stages:
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'deploy sonar:sonar'
+        goals: 'clean deploy org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
         publishJUnitResults: false
         javaHomeOption: 'JDKVersion'
         mavenVersionOption: 'Default'
