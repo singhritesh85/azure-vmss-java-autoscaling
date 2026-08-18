@@ -30,6 +30,22 @@ stages:
           sonar.projectKey=maven-project
           sonar.qualitygate.wait=true
           sonar.qualitygate.timeout=300
+    - task: Bash@3
+      displayName: 'Remove sonar.branch.name for Community Edition'
+      inputs:
+        targetType: 'inline'
+        script: |
+          if [ -n "$SONARQUBE_SCANNER_PARAMS" ]; then
+            NEW_PARAMS=$(python3 -c '
+          import os, json
+          params = json.loads(os.environ["SONARQUBE_SCANNER_PARAMS"])
+          if "sonar.branch.name" in params:
+              del params["sonar.branch.name"]
+          print(json.dumps(params))
+            ')
+            echo "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$NEW_PARAMS"
+            echo "Successfully removed sonar.branch.name from scanner parameters."
+          fi
     - task: SonarQubePublish@7
       inputs:
         pollingTimeoutSec: '300'
@@ -41,7 +57,7 @@ stages:
       inputs:
         azureSubscription: 'Azure DevOps Service Connection'
         mavenPomFile: 'pom.xml'
-        goals: 'clean deploy org.sonarsource.scanner.maven:sonar-maven-plugin:5.7.0.6970:sonar -Dsonar.branch.name=""'
+        goals: 'clean deploy org.sonarsource.scanner.maven:sonar-maven-plugin:5.7.0.6970:sonar'
         publishJUnitResults: false
         javaHomeOption: 'JDKVersion'
         mavenVersionOption: 'Default'
