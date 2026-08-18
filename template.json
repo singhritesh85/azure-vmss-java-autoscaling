@@ -7,7 +7,7 @@
     "client_id": "{{env `CLIENT_ID`}}",
     "client_secret": "{{env `CLIENT_SECRET`}}",
     "managed_image_resource_group_name": "ritesh",
-    "managed_image_name": "GoldenAMI-{{timestamp}}",
+    "managed_image_name": "ReleaseAMI-{{timestamp}}",
 
     "os_type": "Linux",
     "image_publisher": "almalinux",
@@ -31,7 +31,7 @@
        "resource_group": "ritesh",
        "gallery_name": "nhimagegallery",
        "image_name": "demo",
-       "image_version": "1.0.0"
+       "image_version": "1.0.1"
     }
   }],
   "provisioners": [
