@@ -36,15 +36,15 @@ stages:
         mavenServiceConnections: 'Maven'
     - task: Maven@4
       inputs:
+        azureSubscription: 'Azure DevOps Service Connection'
         mavenPomFile: 'pom.xml'
-        goals: 'clean deploy'
+        goals: 'clean deploy sonar:sonar'
         publishJUnitResults: false
         javaHomeOption: 'JDKVersion'
         mavenVersionOption: 'Default'
         mavenAuthenticateFeed: true
         effectivePomSkip: false
-        sonarQubeRunAnalysis: true
-        sqMavenPluginVersionChoice: 'latest'
+        sonarQubeRunAnalysis: false
 - stage: Deployment
   displayName: Deployment
   dependsOn: Build
