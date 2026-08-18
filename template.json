@@ -43,6 +43,11 @@
   }],
   "provisioners": [
     {
+      "type": "file",
+      "source": "./target/LoginWebApp.war",
+      "destination": "/tmp/"
+    },
+    {
       "type": "shell",
       "inline": [
         "sudo yum install -y epel-release",
