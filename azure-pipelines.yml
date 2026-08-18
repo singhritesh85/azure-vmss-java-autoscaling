@@ -23,6 +23,7 @@ stages:
           # Additional properties that will be passed to the scanner, 
           # Put one key=value per line, example:
           # sonar.exclusions=**/*.bin
+          sonar.branch.name=$(Build.SourceBranchName)
           sonar.projectName=maven-project
           sonar.projectKey=maven-project
           sonar.qualitygate.wait=true
