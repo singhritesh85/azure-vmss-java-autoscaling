@@ -48,6 +48,10 @@
       "pause_before": "100s"
     },
     {
+      "type": "shell",
+      "inline": [ "sudo cp /tmp/LoginWebApp.war /opt/apache-tomcat-8.5.100/webapps/"]
+    },
+    {
     "type": "shell",
     "inline": [
       "echo 'Deprovisioning Azure Linux Agent...'",
