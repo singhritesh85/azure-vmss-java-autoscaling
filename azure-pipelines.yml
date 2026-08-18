@@ -80,6 +80,7 @@ stages:
            inputs:
              script: |
                echo "IMAGE_VERSION=$IMAGE_VERSION"
+               echo "image_name=$image_name"
                packer plugins install github.com/hashicorp/azure
                packer plugins install github.com/hashicorp/ansible
                chmod +x create-infra.sh
