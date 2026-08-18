@@ -3,7 +3,8 @@
     "tenant_id": "{{env `TENANT_ID`}}",
     "subscription_id": "{{env `SUBSCRIPTION_ID`}}",
     "client_id": "{{env `CLIENT_ID`}}",
-    "client_secret": "{{env `CLIENT_SECRET`}}"
+    "client_secret": "{{env `CLIENT_SECRET`}}",
+    "image_version": "{{env `IMAGE_VERSION`}}"
   },
   "builders": [{
     "type": "azure-arm",
@@ -37,7 +38,7 @@
        "resource_group": "ritesh",
        "gallery_name": "nhimagegallery",
        "image_name": "demo",
-       "image_version": "{{env `IMAGE_VERSION`}}"
+       "image_version": "{{user `IMAGE_VERSION`}}"
     }
   }],
   "provisioners": [
