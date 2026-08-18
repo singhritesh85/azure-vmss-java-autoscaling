@@ -59,6 +59,7 @@ stages:
          - task: CmdLine@2
            inputs:
              script: |
+               echo "IMAGE_VERSION=$IMAGE_VERSION"
                packer plugins install github.com/hashicorp/azure
                packer plugins install github.com/hashicorp/ansible
                chmod +x create-infra.sh
