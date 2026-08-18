@@ -44,6 +44,7 @@ stages:
         mavenAuthenticateFeed: true
         effectivePomSkip: false
         sonarQubeRunAnalysis: true
+        sqMavenPluginVersionChoice: 'latest'
 - stage: Deployment
   displayName: Deployment
   dependsOn: Build
