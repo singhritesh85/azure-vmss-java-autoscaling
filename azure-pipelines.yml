@@ -82,7 +82,7 @@ stages:
                echo "IMAGE_VERSION=$IMAGE_VERSION"
                packer plugins install github.com/hashicorp/azure
                packer plugins install github.com/hashicorp/ansible
-               packer build -var "tenant_id=$(TENANT_ID)" -var "subscription_id=$(SUBSCRIPTION_ID)" -var "client_id=$(CLIENT_ID)" -var "client_secret=$(CLIENT_SECRET)" template.json
+               packer build -var "image_version=$(IMAGE_VERSION)" -var "tenant_id=$(TENANT_ID)" -var "subscription_id=$(SUBSCRIPTION_ID)" -var "client_id=$(CLIENT_ID)" -var "client_secret=$(CLIENT_SECRET)" template.json
                #chmod +x create-infra.sh
                ###DEXTER=`packer build template.json | tail -7 | head -1`
                ###image_name=`echo $DEXTER|cut -d ":" -f2`
