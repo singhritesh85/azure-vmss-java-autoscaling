@@ -79,7 +79,7 @@ stages:
          - task: CmdLine@2
            inputs:
              script: |
-               echo "IMAGE_VERSION=$IMAGE_VERSION"
+               #echo "IMAGE_VERSION=$IMAGE_VERSION"
                packer plugins install github.com/hashicorp/azure
                packer plugins install github.com/hashicorp/ansible
                packer build -var "tenant_id=$(TENANT_ID)" -var "subscription_id=$(SUBSCRIPTION_ID)" -var "client_id=$(CLIENT_ID)" -var "client_secret=$(CLIENT_SECRET)" -var "image_version=$(IMAGE_VERSION)" template.json
