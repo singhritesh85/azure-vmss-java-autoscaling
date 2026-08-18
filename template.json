@@ -1,11 +1,18 @@
-{
-  "builders": [{
-    "type": "azure-arm",
-
+{ 
+  "variables": {
     "tenant_id": "{{env `TENANT_ID`}}",
     "subscription_id": "{{env `SUBSCRIPTION_ID`}}",
     "client_id": "{{env `CLIENT_ID`}}",
     "client_secret": "{{env `CLIENT_SECRET`}}",
+    "image_version": "{{env `IMAGE_VERSION`}}"
+  },
+  "builders": [{
+    "type": "azure-arm",
+
+    "tenant_id": "{{user `TENANT_ID`}}",
+    "subscription_id": "{{user `SUBSCRIPTION_ID`}}",
+    "client_id": "{{user `CLIENT_ID`}}",
+    "client_secret": "{{user `CLIENT_SECRET`}}",
     "managed_image_resource_group_name": "ritesh",
     "managed_image_name": "ReleaseAMI-{{timestamp}}",
 
@@ -31,7 +38,7 @@
        "resource_group": "ritesh",
        "gallery_name": "nhimagegallery",
        "image_name": "demo",
-       "image_version": "{{env `IMAGE_VERSION`}}"
+       "image_version": "{{user `IMAGE_VERSION`}}"
     }
   }],
   "provisioners": [
