@@ -31,7 +31,7 @@
        "resource_group": "ritesh",
        "gallery_name": "nhimagegallery",
        "image_name": "demo",
-       "image_version": "1.0.1"
+       "image_version": "{{env `IMAGE_VERSION`}}"
     }
   }],
   "provisioners": [
