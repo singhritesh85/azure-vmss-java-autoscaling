@@ -23,12 +23,11 @@ stages:
           # Additional properties that will be passed to the scanner, 
           # Put one key=value per line, example:
           # sonar.exclusions=**/*.bin
-          sonar.branch.name=$(Build.SourceBranchName)
           sonar.projectName=maven-project
           sonar.projectKey=maven-project
           sonar.qualitygate.wait=true
           sonar.qualitygate.timeout=300
-    - task: SonarQubePublish@6
+    - task: SonarQubePublish@7
       inputs:
         pollingTimeoutSec: '300'
     - task: MavenAuthenticate@0
@@ -38,7 +37,7 @@ stages:
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'clean deploy org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
+        goals: 'clean deploy sonar:sonar'
         publishJUnitResults: false
         javaHomeOption: 'JDKVersion'
         mavenVersionOption: 'Default'
