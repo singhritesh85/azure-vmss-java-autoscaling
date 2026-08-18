@@ -1,17 +1,11 @@
 {
-  "variables": {
-    "tenant_id": "{{env `TENANT_ID`}}",
-    "subscription_id": "{{env `SUBSCRIPTION_ID`}}",
-    "client_id": "{{env `CLIENT_ID`}}",
-    "client_secret": "{{env `CLIENT_SECRET`}}"
-  },
   "builders": [{
     "type": "azure-arm",
 
-    "tenant_id": "{{user `tenant_id`}}",
-    "subscription_id": "{{user `subscription_id`}}",
-    "client_id": "{{user `client_id`}}",
-    "client_secret": "{{user `client_secret`}}",
+    "tenant_id": "{{env `TENANT_ID`}}",
+    "subscription_id": "{{env `SUBSCRIPTION_ID`}}",
+    "client_id": "{{env `CLIENT_ID`}}",
+    "client_secret": "{{env `CLIENT_SECRET`}}",
     "managed_image_resource_group_name": "ritesh",
     "managed_image_name": "GoldenAMI-{{timestamp}}",
 
