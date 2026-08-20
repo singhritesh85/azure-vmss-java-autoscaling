@@ -27,7 +27,7 @@
 	<repositories>
 	<repository>
   <id>Maven-Feed</id>
-  <url>https://pkgs.dev.azure.com/singhriteshkumar2510554/_packaging/Maven-Feed/maven/v1</url>
+  <url>https://pkgs.dev.azure.com/singhriteshkumar2510554/my-demo-project/_packaging/Maven-Feed/maven/v1</url>
   <releases>
     <enabled>true</enabled>
   </releases>
@@ -39,7 +39,7 @@
 	<distributionManagement>
 		<repository>
   <id>Maven-Feed</id>
-  <url>https://pkgs.dev.azure.com/singhriteshkumar2510554/_packaging/Maven-Feed/maven/v1</url>
+  <url>https://pkgs.dev.azure.com/singhriteshkumar2510554/my-demo-project/_packaging/Maven-Feed/maven/v1</url>
   <releases>
     <enabled>true</enabled>
   </releases>
